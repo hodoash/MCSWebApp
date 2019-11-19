@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/fonts/simple-line-icons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+    <link rel="stylesheet" href="../assets/css/Dark-Footer.css">
+    <link rel="stylesheet" href="../assets/css/Dark-Footer.css">
+    <link rel="stylesheet" href="../assets/css/Dark-Footer.css">
+    <link rel="stylesheet" href="../assets/css/Dark-Footer.css">
+    <link rel="stylesheet" href="../assets/css/Dark-Footer.css">
+    <link rel="stylesheet" href="../assets/css/Dark-Footer.css">
+    <link rel="stylesheet" href="../assets/css/gradient-navbar-1.css">
+    <link rel="stylesheet" href="../assets/css/Pretty-Footer.css">
+    <link rel="stylesheet" href="../assets/css/gradient-navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+    <link rel="stylesheet" href="../assets/css/smoothproducts.css">
+    <link rel="stylesheet" href="../assets/css/untitled.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md">
+        <div class="container-fluid"><a class="navbar-brand" href="#">CozyHill</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-2"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse justify-content-center align-items-stretch"
+                id="navcol-2">
+                <ul class="nav navbar-nav flex-row mx-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="../index.php">Home</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="../gallery/index.php">&nbsp;Hostel Gallery</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="../pricing/index.php">Pricing</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="../bookHostel/index">Book a Hostel</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="../review/index.php">Review</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="../contactUs/index.php">Contact Us</a></li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="../login/index.php"><i class="fa fa-user"></i>login</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="about-us.html">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="page pricing-table-page">
+        <section class="clean-block clean-pricing dark">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info">What Is Your Budget?</h2>
+                    <p>No matter your pocket size, we have something for you</p>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-5 col-lg-4">
+                        <div class="clean-pricing-item">
+                            <div class="heading">
+                                <h3>Charlotte</h3>
+                            </div>
+                            <p>Seclusion &amp; Privacy</p>
+                            <div class="features">
+                                <h4><span class="feature">1-person:&nbsp;</span><span>5000$</span></h4>
+                                <h4><span class="feature">2-person:&nbsp;</span><span>4000$</span></h4>
+                                <h4><span class="feature">3-person:&nbsp;</span><span>3000$</span></h4>
+                                <h4><span class="feature">4-person:&nbsp;</span><span>2000$</span></h4>
+                            </div><form method="GET" action="../bookHostel/index"><button class="btn btn-outline-primary btn-block" type="submit">Book Now!</button></form></div>
+                    </div>
+                    <div class="col-md-5 col-lg-4">
+                        <div class="clean-pricing-item">
+                            <div class="heading">
+                                <h3>Dufie</h3>
+                            </div>
+                            <p>Luxuray Personified</p>
+                            <div class="features">
+                                <h4><span class="feature">1-person:&nbsp;</span><span>5000$</span></h4>
+                                <h4><span class="feature">2-person:&nbsp;</span><span>4000$</span></h4>
+                                <h4><span class="feature">3-person:&nbsp;</span><span>3000$</span></h4>
+                                <h4><span class="feature">4-person:&nbsp;</span><span>2000$</span></h4>
+                            </div><form method="GET" action="../bookHostel/index"><button class="btn btn-outline-primary btn-block" type="submit">Book Now!</button></form></div>
+                    </div>
+                    <div class="col-md-5 col-lg-4">
+                        <div class="clean-pricing-item">
+                            <div class="heading">
+                                <h3>Hosanna</h3>
+                            </div>
+                            <p>Loving Community</p>
+                            <div class="features">
+                                <h4><span class="feature">1-person:&nbsp;</span><span>5000$</span></h4>
+                                <h4><span class="feature">2-person:&nbsp;</span><span>4000$</span></h4>
+                                <h4><span class="feature">3-person:&nbsp;</span><span>3000$</span></h4>
+                                <h4><span class="feature">4-person:&nbsp;</span><span>2000$</span></h4>
+                            </div><form method="GET" action="../bookHostel/index"><button class="btn btn-outline-primary btn-block" type="submit">Book Now!</button></form></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="row">
+            <div class="col-sm-6 col-md-4 footer-navigation">
+                <h3><a href="#">Company<span>logo </span></a></h3>
+                <p class="links"><a href="#">Home</a><strong> · </strong><a href="#">Gallery</a><strong> · </strong><a href="#">Pricing</a><strong> · </strong><a href="#">Register</a><strong> · </strong><a href="#">Review</a><strong> · </strong><a href="#">Contact</a></p>
+                <p
+                    class="company-name">cozyHillz © 2019</p>
+            </div>
+            <div class="col-sm-6 col-md-4 footer-contacts">
+                <div><span class="fa fa-map-marker footer-contacts-icon"> </span>
+                    <p><span class="new-line-span">1st Avenue Street</span> Berekusu, Ghana</p>
+                </div>
+                <div><i class="fa fa-phone footer-contacts-icon"></i>
+                    <p class="footer-center-info email text-left"> +233 546 474 503&nbsp;</p>
+                </div>
+                <div><i class="fa fa-envelope footer-contacts-icon"></i>
+                    <p> <a href="#" target="_blank">managingcs@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-md-4 footer-about">
+                <h4>About the company</h4>
+                <p> CozzyHillz is a company that provides hostel maanagement services and booking system to students in Ashesi. Student &nbsp;Satisfaction is our top priority.</p>
+                <div class="social-links social-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a><a href="#"><i class="fa fa-github"></i></a></div>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script src="assets/js/smoothproducts.min.js"></script>
+    <script src="assets/js/theme.js"></script>
+</body>
+
+</html>
