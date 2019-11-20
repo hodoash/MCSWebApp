@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Gallery - mcsSite2</title>
+    <title>Gallery | Cozy Hill</title>
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
     <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
@@ -25,21 +25,34 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-light navbar-expand-md">
-        <div class="container-fluid"><a class="navbar-brand" href="#">CozyHill</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-2"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse justify-content-center align-items-stretch"
-                id="navcol-2">
-                <ul class="nav navbar-nav flex-row mx-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="../index.php">Home</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="../gallery/index.php">&nbsp;Hostel Gallery</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="../pricing/index.php">Pricing</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="../bookHostel/index.php">Book a Hostel</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="../review/index.php">Review</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="../contactUs/index.php">Contact Us</a></li>
-                </ul>
-                <ul class="nav navbar-nav">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="../login/index.php"><i class="fa fa-user"></i>login</a></li>
-                    <!-- <li class="nav-item" role="presentation"><a class="nav-link" href="about-us.html">About</a></li>-->
+    <nav class="navbar navbar-light navbar-expand fixed-top bg-white clean-navbar">
+        <div class="container">
+            <a class="navbar-brand logo" href="index.html">Cozy Hill</a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse flex-grow-1 flex-fill justify-content-between"
+                id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" href="../index.php">Home</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active" href="../gallery/index.php">&nbsp;Gallery</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" href="../bookHostel/index.php">Book a Hostel</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" href="../review/index.php">Reviews</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" href="../contactUS/index.php">Contact Us</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" href="../login/index.php">Login</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -51,15 +64,50 @@
                     <h2 class="text-info">Gallery</h2>
                 </div>
                 <div class="row">
-                    <div class="col-md-6 col-lg-4 item"><a href="../assets/img/scenery/image1.jpg" class="lightbox"><img class="img-thumbnail img-fluid image" src="../assets/img/scenery/image1.jpg"></a></div>
-                    <div class="col-md-6 col-lg-4 item"><a href="../assets/img/scenery/image4.jpg" class="lightbox"><img class="img-thumbnail img-fluid image" src="../assets/img/scenery/image4.jpg"></a></div>
-                    <div class="col-md-6 col-lg-4 item"><a href="../assets/img/scenery/image6.jpg" class="lightbox"><img class="img-thumbnail img-fluid image" src="../assets/img/scenery/image6.jpg"></a></div>
-                    <div class="col-md-6 col-lg-4 item"><a href="../assets/img/scenery/image5.jpg" class="lightbox"><img class="img-thumbnail img-fluid image" src="../assets/img/scenery/image5.jpg"></a></div>
-                    <div class="col-md-6 col-lg-4 item"><a href="../assets/img/scenery/image1.jpg" class="lightbox"><img class="img-thumbnail img-fluid image" src="../assets/img/scenery/image1.jpg"></a></div>
-                    <div class="col-md-6 col-lg-4 item"><a href="../assets/img/scenery/image4.jpg" class="lightbox"><img class="img-thumbnail img-fluid image" src="../assets/img/scenery/image4.jpg"></a></div>
-                    <div class="col-md-6 col-lg-4 item"><a href="../assets/img/scenery/image6.jpg" class="lightbox"><img class="img-thumbnail img-fluid image" src="../assets/img/scenery/image6.jpg"></a></div>
-                    <div class="col-md-6 col-lg-4 item"><a href="../assets/img/scenery/image5.jpg" class="lightbox"><img class="img-thumbnail img-fluid image" src="../assets/img/scenery/image5.jpg"></a></div>
-                    <div class="col-md-6 col-lg-4 item"><a href="../assets/img/scenery/image1.jpg" class="lightbox"><img class="img-thumbnail img-fluid image" src="../assets/img/scenery/image1.jpg"></a></div>
+                    <div class="col-md-6 col-lg-4 item">
+                        <a href="img_1.jpeg" class="lightbox">
+                            <img class="img-thumbnail img-fluid image" src="img_1.jpeg">
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-lg-4 item">
+                        <a href="img_2.jpeg" class="lightbox">
+                            <img class="img-thumbnail img-fluid image" src="img_2.jpeg">
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-lg-4 item">
+                        <a href="img_3.jpeg" class="lightbox">
+                            <img class="img-thumbnail img-fluid image" src="img_3.jpeg">
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-lg-4 item">
+                        <a href="img_4.jpeg" class="lightbox">
+                            <img class="img-thumbnail img-fluid image" src="img_4.jpeg">
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-lg-4 item">
+                        <a href="img_5.jpeg" class="lightbox">
+                            <img class="img-thumbnail img-fluid image" src="img_5.jpeg">
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-lg-4 item">
+                        <a href="img_6.jpeg" class="lightbox">
+                            <img class="img-thumbnail img-fluid image" src="img_6.jpeg"></a>
+                        </div>
+                    <div class="col-md-6 col-lg-4 item">
+                        <a href="img_7.jpeg" class="lightbox">
+                            <img class="img-thumbnail img-fluid image" src="img_7.jpeg">
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-lg-4 item">
+                        <a href="img_8.jpeg" class="lightbox">
+                            <img class="img-thumbnail img-fluid image" src="img_8.jpeg">
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-lg-4 item">
+                        <a href="img_9.jpeg" class="lightbox">
+                            <img class="img-thumbnail img-fluid image" src="img_9.jpeg">
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -67,8 +115,24 @@
     <footer>
         <div class="row">
             <div class="col-sm-6 col-md-4 footer-navigation">
-                <h3><a href="#">Company<span>logo </span></a></h3>
-                <p class="links"><a href="#">Home</a><strong> · </strong><a href="#">Gallery</a><strong> · </strong><a href="#">Pricing</a><strong> · </strong><a href="#">Register</a><strong> · </strong><a href="#">Review</a><strong> · </strong><a href="#">Contact</a></p>
+                <h3>
+                    <a href="#">Company
+                        <span>logo </span>
+                    </a>
+                </h3>
+                <p class="links">
+                    <a href="../index.php">Home</a>
+                    <strong> · </strong>
+                    <a href="../gallery/index.php">Gallery</a>
+                    <strong> · </strong>
+                    <a href="../bookHostel/index.php">Book a Hostel</a>
+                    <strong> · </strong>
+                    <a href="../review/index.php">Reviews</a>
+                    <strong> · </strong>
+                    <a href="../contactUS/index.php">Contact Us</a>
+                    <strong> · </strong>
+                    <a href="../login/index.php">Login</a>
+                </p>
                 <p
                     class="company-name">cozyHillz © 2019</p>
             </div>
