@@ -7,13 +7,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 	$args=$_POST['user'];
     $user=new User($args);
-   
+    
     $errors=$user->validateData();//print_r($errors);return true;
     if(empty($errors)){
     	if(User::find_email($args['email'])){
-    		$user->errors[]="a user already created an account with this email.";
+    		$user->errors[]="a user already created an account with this email.";echo 'albert';return true;
     	}
-        else{
+        else{//echo 'albert';return true;
     		$result=$user->save();//return true;
     		if($result){
     			$new_id=$user->id;

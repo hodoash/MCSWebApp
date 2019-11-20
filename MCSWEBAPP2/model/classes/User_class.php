@@ -112,6 +112,7 @@ class User extends DatabaseConn{
 	 */
 	static public function find_email($email) {
     	$sql = "SELECT * FROM " . static::$tab_name ." WHERE email='" . self::$databaseName->escape_string($email) . "'";
+    	//echo $sql; return true;
     	$obj_arr = static::find_sql($sql);
 
     	if(!empty($obj_arr)) {
