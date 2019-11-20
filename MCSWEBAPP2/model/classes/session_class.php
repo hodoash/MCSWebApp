@@ -32,8 +32,8 @@ class Session{
 	 */
 	public function __construct(){
 		session_start();
-		}$this->checkLogin();
-	}
+		}//$this->checkLogin();
+	//}
 
 	/**
 	 * @param user object

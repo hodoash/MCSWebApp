@@ -1,9 +1,6 @@
 <?php
 	
 	
-	define("MODEL_PATH",dirname(__FILE__));
-	define("MCSPROJECT_PATH",dirname(MODEL_PATH));
-	define("VIEW_PATH",MCSPROJECT_PATH.'/viewandcontroller');
 	define("URL",'http://localhost/mcswebapp2/viewandcontroller');
 
 	//define the www root as well
@@ -11,7 +8,7 @@
 	$root=substr($_SERVER['SCRIPT_NAME'],0,$endOfView);
 	define("WWW_ROOT",$root);
 
-	require_once('functionsModule.php');
+	
 	require_once('form_validation.php');
 	require_once('mcs_db_credentials.php');
 	require_once('mcs_database_functions.php');
