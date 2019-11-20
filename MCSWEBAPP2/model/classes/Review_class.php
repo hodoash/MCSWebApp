@@ -52,23 +52,23 @@ class Review extends DatabaseConn{
 	 * this method does backend validation for form input
 	 * and returns an array of errors if any
 	 */
-	protected function valUserForm(){
+	public function valUserForm(){
 		$this->errors=[];
 
 		if(''===($this->name)) {
       		$this->errors[] = "Name cannot be blank.";
-    	} elseif (!has_length($this->name, array('min' => 2, 'max' => 100))) {
-      		$this->errors[] = "Name must be between 2 and 100 characters.";
-		}
+      	}elseif(strlen($this->name)<5){
+      		$this->errors[] = "Name cannot contain less than 5 characters.";
+      	}
 		if(''===($this->subject)) {
 			$this->errors[] = "subject cannot be blank.";
-	  } elseif (!has_length($this->subject, array('min' => 2, 'max' => 100))) {
-			$this->errors[] = "subject must be between 2 and 100 characters.";
+	  } elseif (strlen($this->subject)>50) {
+			$this->errors[] = "subject must be between 2 and 50 characters.";
 	  }
 	  if(''===($this->matter)) {
 		$this->errors[] = "comment cannot be blank.";
-  } elseif (!has_length($this->matter, array('min' => 2, 'max' => 100))) {
-		$this->errors[] = "comment must be between 2 and 100 characters.";
+  } elseif (strlen($this->matter)>225) {
+		$this->errors[] = "comment must be between 2 and 225 characters.";
   }
 
 	    return $this->errors;

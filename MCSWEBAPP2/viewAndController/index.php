@@ -7,12 +7,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 	$args=$_POST['user'];
     $user=new User($args);
-    $method = new ReflectionMethod('User', 'valUserForm');
-    $method->setAccessible(true);
-    $errors= $method->invoke(new User);
+    //$method = new ReflectionMethod('User', 'valUserForm');
+    //$method->setAccessible(true);
+    //$errors= $method->invoke($user=new User($args));print_r($errors);return true;
     //User::valUserForm();
     //print_r($errors);
     //return true;
+    $errors=$user->validateData();//print_r($errors);return true;
+
 
  //    $smth = User::find_email($args['email']);
  //    echo "smth";
@@ -29,7 +31,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     			redirect_to(URL.'/login');
     		}else{/*................*/}
     	}
-    }else{//showAllErrors(); 
+    }else{//print_r($errors);
+    //showAllErrors(); 
         //redirect_to(URL.'/');
     }
 }

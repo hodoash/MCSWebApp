@@ -70,15 +70,9 @@ class User extends DatabaseConn{
 		$this->hashPass();
 		return parent::create();
 	}
-	/**
-	 * @return array
-	 * @param void
-	 * this method does backend validation for form input
-	 * and returns an array of errors if any
-	 */
-	protected function valUserForm(){
+	
+	/*public function valUserForm(){
 		$this->errors=[];
-
 		if(''===($this->name)) {
       		$this->errors[] = "Name cannot be blank.";
     	} elseif (!has_length($this->name, array('min' => 2, 'max' => 100))) {
@@ -87,7 +81,7 @@ class User extends DatabaseConn{
 
 	    if(''===($this->email)) {//echo "two";return true;
 	     	$this->errors[] = "Email cannot be blank.";
-	    } elseif (!has_length($this->email, array('max' => 255))) {
+	    } elseif (!$this->has_length($this->email, array('max' => 255))) {
 	      	$this->errors[] = " email must be less than 255 characters.";
 	    } elseif (!has_valid_email_format($this->email)) {
 	      	$this->errors[] = "Email must be a valid format.";
@@ -107,7 +101,7 @@ class User extends DatabaseConn{
 	    	if(''===($this->pass)) {
 	        	$this->errors[] = "Password cannot be blank.";
 	      	} elseif (!has_length($this->pass, array('min' => 8))) {
-	        	$this->errors[] = "Password must contain 12 or more characters";
+	        	$this->errors[] = "Password must contain 8 or more characters";
 	        } elseif (!preg_match('/[A-Z]/', $this->pass)) {
 	        	$this->errors[] = "Password must contain at least 1 uppercase letter";
 	        } elseif (!preg_match('/[a-z]/', $this->pass)) {
@@ -124,6 +118,43 @@ class User extends DatabaseConn{
 	    }
 
 	    return $this->errors;
+	}*/
+	
+	/**
+	 * @return array
+	 * @param void
+	 * this method does backend validation for form input
+	 * and returns an array of errors if any
+	 */
+	public function validateData(){
+		$this->errors=[];
+		if(''===($this->name)) {
+      		$this->errors[] = "Name cannot be blank.";
+      	}elseif(strlen($this->name)<5){
+      		$this->errors[] = "Name cannot contain less than 5 characters.";
+      	}
+
+      	if(''===($this->phone_no)) {
+      		$this->errors[] = "phone number cannot be blank.";
+      	}elseif(strlen($this->phone_no)!=10){
+      		$this->errors[] = "phone number cannot contain less or more than 10 characters.";
+      	}
+
+      	if(!preg_match('/[A-Z]/', $this->pass)) {
+	        	$this->errors[] = "Password must contain at least 1 uppercase letter";	
+		} elseif (!preg_match('/[a-z]/', $this->pass)) {
+	        	$this->errors[] = "Password must contain at least 1 lowercase letter";
+	    } elseif (!preg_match('/[0-9]/', $this->pass)) {
+	        	$this->errors[] = "Password must contain at least 1 number";
+	    }
+
+	    if(''===($this->confirm_pass)) {
+	        	$this->errors[] = "Confirm password cannot be blank.";
+	    }elseif ($this->pass !== $this->confirm_pass) {
+	        	$this->errors[] = "Password and confirm password must match.";
+	    }
+			return $this->errors;
+
 	}
 
 	/**
