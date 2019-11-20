@@ -65,32 +65,43 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     </head>
 
     <body>
-       
-        <nav class="navbar navbar-light navbar-expand-md">
-            <div class="container-fluid"><a class="navbar-brand" href="#">CozyHill</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-2"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse justify-content-center align-items-stretch"
-                    id="navcol-2">
-                    <ul class="nav navbar-nav flex-row mx-auto">
-                        <li class="nav-item" role="presentation"><a class="nav-link active" href="index.php">Home</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="gallery/index.php">&nbsp;Hostel Gallery</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="pricing/index.php">Pricing</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="bookHostel/index.php">Book a Hostel</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="review/index.php">Review</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="contactUs/index.php">Contact Us</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav">
-                        <li class="nav-item" role="presentation"><a class="nav-link active" href="login/index.php"><i class="fa fa-user"></i>login</a></li>
-                        <!--<li class="nav-item" role="presentation"><a class="nav-link" href="about-us.php">About</a></li>-->
-                    </ul>
-                </div>
+        <nav class="navbar navbar-light navbar-expand fixed-top bg-white clean-navbar">
+        <div class="container">
+            <a class="navbar-brand logo" href="index.html">Cozy Hill</a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse flex-grow-1 flex-fill justify-content-between"
+                id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active" href="./index.php">Home</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" href="./gallery/index.php">&nbsp;Gallery</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" href="./bookHostel/index.php">Book a Hostel</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" href="./review/index.php">Reviews</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" href="./contactUS/index.php">Contact Us</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" href="./login/index.php">Login</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
         <main class="page landing-page">
-            <section class="clean-block clean-hero" style="background-image:url(&quot;assets/img/undraw_best_place_r685.svg&quot;);color:rgba(55,149,207,0.85);background-position:center;background-size:cover;background-repeat:no-repeat;">
-                <div class="text">
-                    <h2>We are CozyHills .</h2>
-                    <p>We bring you to the doorsteps of the hostels on the Berekusu Hill.  We enable you book hostels from the comfort of your home or anywhere you find yourself.</p></div>
-            </section>
+            <section class="clean-block clean-hero" style="background-image:url(ashesi.jpg);color:rgba(155,149,207,0.45);background-position:center;background-size:cover;background-repeat:no-repeat;">
+            <div class="text">
+            </div>
+        </section>
             <section class="clean-block about-us">
                 <div class="container">
                     <div class="block-heading">
@@ -177,32 +188,48 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             </section>
         </main>
         <footer>
-            <div class="row">
-                <div class="col-sm-6 col-md-4 footer-navigation">
-                    <h3><a href="#">Company<span>logo </span></a></h3>
-                    <p class="links"><a href="#">Home</a><strong> · </strong><a href="#">Gallery</a><strong> · </strong><a href="#">Pricing</a><strong> · </strong><a href="#">Register</a><strong> · </strong><a href="#">Review</a><strong> · </strong><a href="#">Contact</a></p>
-                    <p
-                        class="company-name">cozyHillz © 2019</p>
+        <div class="row">
+            <div class="col-sm-6 col-md-4 footer-navigation">
+                <h3>
+                    <a href="#">Company
+                        <span>logo </span>
+                    </a>
+                </h3>
+                <p class="links">
+                    <a href="../index.php">Home</a>
+                    <strong> · </strong>
+                    <a href="../gallery/index.php">Gallery</a>
+                    <strong> · </strong>
+                    <a href="../bookHostel/index.php">Book a Hostel</a>
+                    <strong> · </strong>
+                    <a href="../review/index.php">Reviews</a>
+                    <strong> · </strong>
+                    <a href="../contactUS/index.php">Contact Us</a>
+                    <strong> · </strong>
+                    <a href="../login/index.php">Login</a>
+                </p>
+                <p
+                    class="company-name">cozyHillz © 2019</p>
+            </div>
+            <div class="col-sm-6 col-md-4 footer-contacts">
+                <div><span class="fa fa-map-marker footer-contacts-icon"> </span>
+                    <p><span class="new-line-span">1st Avenue Street</span> Berekusu, Ghana</p>
                 </div>
-                <div class="col-sm-6 col-md-4 footer-contacts">
-                    <div><span class="fa fa-map-marker footer-contacts-icon"> </span>
-                        <p><span class="new-line-span">1st Avenue Street</span> Berekusu, Ghana</p>
-                    </div>
-                    <div><i class="fa fa-phone footer-contacts-icon"></i>
-                        <p class="footer-center-info email text-left"> +233 546 474 503&nbsp;</p>
-                    </div>
-                    <div><i class="fa fa-envelope footer-contacts-icon"></i>
-                        <p> <a href="#" target="_blank">managingcs@gmail.com</a></p>
-                    </div>
+                <div><i class="fa fa-phone footer-contacts-icon"></i>
+                    <p class="footer-center-info email text-left"> +233 546 474 503&nbsp;</p>
                 </div>
-                <div class="clearfix"></div>
-                <div class="col-md-4 footer-about">
-                    <h4>About the company</h4>
-                    <p> CozzyHillz is a company that provides hostel maanagement services and booking system to students in Ashesi. Student &nbsp;Satisfaction is our top priority.</p>
-                    <div class="social-links social-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a><a href="#"><i class="fa fa-github"></i></a></div>
+                <div><i class="fa fa-envelope footer-contacts-icon"></i>
+                    <p> <a href="#" target="_blank">managingcs@gmail.com</a></p>
                 </div>
             </div>
-        </footer>
+            <div class="clearfix"></div>
+            <div class="col-md-4 footer-about">
+                <h4>About the company</h4>
+                <p> CozzyHillz is a company that provides hostel maanagement services and booking system to students in Ashesi. Student &nbsp;Satisfaction is our top priority.</p>
+                <div class="social-links social-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a><a href="#"><i class="fa fa-github"></i></a></div>
+            </div>
+        </div>
+    </footer>
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>

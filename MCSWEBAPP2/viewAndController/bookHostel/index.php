@@ -74,7 +74,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Register - mcsSite2</title>
+    <title>Book a Hostel | Cozy Hill</title>
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
     <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
@@ -95,26 +95,100 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 </head>
 
 <body>
-    <nav class="navbar navbar-light navbar-expand-md">
-        <div class="container-fluid"><a class="navbar-brand" href="#">CozyHill</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-2"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse justify-content-center align-items-stretch"
-                id="navcol-2">
-                <ul class="nav navbar-nav flex-row mx-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="../index.php">Home</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="../gallery/index.php">&nbsp;Hostel Gallery</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="../pricing/index.php">Pricing</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="../bookHostel/index.php">Book a Hostel</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="../review/index.php">Review</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="../contactUs/index.php">Contact Us</a></li>
-                </ul>
-                <ul class="nav navbar-nav">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="../login/index.php"><i class="fa fa-user"></i>login</a></li>
-                    <!-- <li class="nav-item" role="presentation"><a class="nav-link" href="about-us.html">About</a></li>-->
+    <nav class="navbar navbar-light navbar-expand fixed-top bg-white clean-navbar">
+        <div class="container">
+            <a class="navbar-brand logo" href="index.html">Cozy Hill</a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse flex-grow-1 flex-fill justify-content-between"
+                id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" href="../index.php">Home</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" href="../gallery/index.php">&nbsp;Gallery</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active" href="../bookHostel/index.php">Book a Hostel</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" href="../review/index.php">Reviews</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" href="../contactUS/index.php">Contact Us</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" href="../login/index.php">Login</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
     <main class="page registration-page">
+        <section class="clean-block clean-pricing dark">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info">What Is Your Budget?</h2>
+                    <p>No matter your pocket size, we have something for you</p>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-5 col-lg-4">
+                        <div class="clean-pricing-item">
+                            <div class="heading">
+                                <h3>Charlotte</h3>
+                            </div>
+                            <p>Seclusion &amp; Privacy</p>
+                            <div class="features">
+                                <h4>
+                                    <span class="feature">1-person:&nbsp;</span>
+                                    <span>5000$</span>
+                                </h4>
+                                <h4>
+                                    <span class="feature">2-person:&nbsp;</span>
+                                    <span>4000$</span>
+                                </h4>
+                                <h4>
+                                    <span class="feature">3-person:&nbsp;</span>
+                                    <span>3000$</span>
+                                </h4>
+                                <h4>
+                                    <span class="feature">4-person:&nbsp;</span>
+                                    <span>2000$</span>
+                                </h4>
+                            </div></div>
+                    </div>
+                    <div class="col-md-5 col-lg-4">
+                        <div class="clean-pricing-item">
+                            <div class="heading">
+                                <h3>Dufie</h3>
+                            </div>
+                            <p>Luxuray Personified</p>
+                            <div class="features">
+                                <h4><span class="feature">1-person:&nbsp;</span><span>5000$</span></h4>
+                                <h4><span class="feature">2-person:&nbsp;</span><span>4000$</span></h4>
+                                <h4><span class="feature">3-person:&nbsp;</span><span>3000$</span></h4>
+                                <h4><span class="feature">4-person:&nbsp;</span><span>2000$</span></h4>
+                            </div></div>
+                    </div>
+                    <div class="col-md-5 col-lg-4">
+                        <div class="clean-pricing-item">
+                            <div class="heading">
+                                <h3>Hosanna</h3>
+                            </div>
+                            <p>Loving Community</p>
+                            <div class="features">
+                                <h4><span class="feature">1-person:&nbsp;</span><span>5000$</span></h4>
+                                <h4><span class="feature">2-person:&nbsp;</span><span>4000$</span></h4>
+                                <h4><span class="feature">3-person:&nbsp;</span><span>3000$</span></h4>
+                                <h4><span class="feature">4-person:&nbsp;</span><span>2000$</span></h4>
+                            </div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section class="clean-block clean-form dark">
             <div class="container">
                 <div class="block-heading">
@@ -162,8 +236,24 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     <footer>
         <div class="row">
             <div class="col-sm-6 col-md-4 footer-navigation">
-                <h3><a href="#">Company<span>logo </span></a></h3>
-                <p class="links"><a href="#">Home</a><strong> · </strong><a href="#">Gallery</a><strong> · </strong><a href="#">Pricing</a><strong> · </strong><a href="#">Register</a><strong> · </strong><a href="#">Review</a><strong> · </strong><a href="#">Contact</a></p>
+                <h3>
+                    <a href="#">Company
+                        <span>logo </span>
+                    </a>
+                </h3>
+                <p class="links">
+                    <a href="../index.php">Home</a>
+                    <strong> · </strong>
+                    <a href="../gallery/index.php">Gallery</a>
+                    <strong> · </strong>
+                    <a href="../bookHostel/index.php">Book a Hostel</a>
+                    <strong> · </strong>
+                    <a href="../review/index.php">Reviews</a>
+                    <strong> · </strong>
+                    <a href="../contactUS/index.php">Contact Us</a>
+                    <strong> · </strong>
+                    <a href="../login/index.php">Login</a>
+                </p>
                 <p
                     class="company-name">cozyHillz © 2019</p>
             </div>
