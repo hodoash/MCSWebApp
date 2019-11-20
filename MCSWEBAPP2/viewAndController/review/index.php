@@ -18,11 +18,19 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $sub=sanitizeComment($sub);
     $messages=sanitizeComment($messages);
 
+    //$review=new Review($name,$sub,$messages);
+
+
+    $method = new ReflectionMethod('review', 'valUserForm');
+    $method->setAccessible(true);
+    $errors= $method->invoke($review=new Review($name,$sub,$messages));//print_r($errors);return true;
+    //User::valUserForm();
+
 
 
     //echo $messages; return true;
     if(empty($errors)){
-        $review=new Review($name,$sub,$messages);
+        //$review=new Review($name,$sub,$messages);
         //echo $review->name;
        $result=$review->save();
         if($result){
