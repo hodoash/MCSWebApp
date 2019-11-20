@@ -3,15 +3,11 @@ require_once('../../model/settings.php');
 
 $errors=[];
 $user=[];
-//$email='';
-//$pass='';
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    //echo "one";
-    //echo $_POST['email'];
-    $email= $_POST['email'];// ?? '';
-    $pass=$_POST['pass'];// ?? '';
 
+    $email= $_POST['email'];
+    $pass=$_POST['pass'];
     $email=sanitizeData($email);
     $pass=sanitizeData($pass);
     $pass=sha1($pass);
@@ -20,12 +16,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if(empty($errors)){
         //echo"gfdxcv...................";
         $user=User::find_email($email);
-        $userPass=$user['password'];//echo $userPass;
-        //$userPass=User::find_pass($pass);
-        //print_r($user) ;return true;
-
-        //return true;
-        if($user !=false && $userPass!=false ||$user !="" && $userPass!="" ){
+        $userPass=$user['password'];
+     
+        if($user !=false && $userPass==$pass /*||$user !="" && $userPass!="" */){
             $session->login($user);
             //echo URL.'../pricing';
             

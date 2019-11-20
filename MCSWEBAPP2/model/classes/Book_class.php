@@ -113,7 +113,7 @@ class Book extends DatabaseConn{
     	//print_r($obj_arr);
     	if(!empty($obj_arr)) {
     		return $obj_arr;
-      		//return array_shift($obj_arr);
+      		
     	} else {
       		return false;
     	}
@@ -128,7 +128,7 @@ class Book extends DatabaseConn{
 	 */
   	static public function find_email($email) {
     	$sql = "SELECT * FROM " . static::$tab_name0 ." WHERE email='" . self::$databaseName->escape_string($email) . "'";
-    	//echo $sql; return true;
+    	
     	$obj_arr = static::find_sql($sql);
     	//print_r($obj_arr);
     	if(!empty($obj_arr)) {

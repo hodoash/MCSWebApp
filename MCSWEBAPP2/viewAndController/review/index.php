@@ -3,15 +3,11 @@
 require_once('../../model/settings.php');  
 
 $errors=[];
-//$user=[];
-//$email='';
-//$pass='';
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    //echo "one";
-    //echo $_POST['email'];
-    $name= $_POST['name'];// ?? '';
-    $sub=$_POST['sub'];// ?? '';
+    
+    $name= $_POST['name'];
+    $sub=$_POST['sub'];
     $messages=$_POST['messages'];
 
     $name=sanitizeData($name);
@@ -30,18 +26,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     //echo $messages; return true;
     if(empty($errors)){
-        //$review=new Review($name,$sub,$messages);
-        //echo $review->name;
        $result=$review->save();
         if($result){
-            //$new_id=$review->id;
-            
-        }    //redirect_to(URL.'/login');
+      
        
     }
     else{
             $errors[]=" Error,User was not able add review.";
         }
+    }
     
 
 }

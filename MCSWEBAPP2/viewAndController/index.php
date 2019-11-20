@@ -9,25 +9,23 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $user=new User($args);
    
     $errors=$user->validateData();//print_r($errors);return true;
-
-
- //    $smth = User::find_email($args['email']);
- //    echo "smth";
-	// return true;
     if(empty($errors)){
     	if(User::find_email($args['email'])){
     		$user->errors[]="a user already created an account with this email.";
-
-    	}else{
-    		$result=$user->save();
+    	}
+        else{
+    		$result=$user->save();//return true;
     		if($result){
     			$new_id=$user->id;
-    			
+                //echo header("Location: " .URL.'/login');return true;
                 header("Location: " .URL.'/login');
-    		}else{/*................*/}
-    	}
-    }else{//print_r($errors);
-   
+    		}
+
+            else
+                {/*................}*/
+            }
+      
+        }
     }
 }
 
@@ -44,7 +42,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-        <title>Home | Cozy Hill</title>
+        <title>Home - mcsSite2</title>
         <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
         <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">

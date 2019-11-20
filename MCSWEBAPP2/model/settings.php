@@ -1,12 +1,11 @@
 <?php
 	
-	
 	define("URL",'http://localhost/mcswebapp2/viewandcontroller');
 
 	//define the www root as well
-	$endOfView=strpos($_SERVER['SCRIPT_NAME'],'/viewandcontroller')+18;
+	/*$endOfView=strpos($_SERVER['SCRIPT_NAME'],'/viewandcontroller')+18;
 	$root=substr($_SERVER['SCRIPT_NAME'],0,$endOfView);
-	define("WWW_ROOT",$root);
+	define("WWW_ROOT",$root);*/
 
 	
 	require_once('form_validation.php');

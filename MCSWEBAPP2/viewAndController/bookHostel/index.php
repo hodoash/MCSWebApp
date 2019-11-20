@@ -6,7 +6,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     //requireLogin();
     //echo "yes";
     $bargs=$_POST['book'];//print_r($bargs); echo "one";return true;
-    //$book=new Book($bargs);//print_r($book); echo "one";return true;
+    
     //$book->valUserForm();
     $method = new ReflectionMethod('book', 'valUserForm');
     $method->setAccessible(true);
@@ -14,53 +14,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     $u_id=$book::find_email($bargs['email']);//echo $u_id;return true;
     $book->setUserId($u_id); //echo $book::myU_id();
-    //$book->$u_id=$u_id;
     $book->save();
 
 
-    //$arrBook=[/*$_POST['book[hostel]'],*/$_POST['book[email]']];
-    //$arrRoom=[$book['rm_email'],$book['rm_phone_no']];
-    //print_r($arrBook);return true;
-    //return false;
-    /*$email= $_POST['book[email]'];// ?? '';
-    $phone_no=$_POST['phone_no'];// ?? '';
-    $hostel= $_POST['hostel'];// ?? '';
-    //$roomtype=$_POST['room'];
-    $roommate=$_POST['roommate'];
-    $room=$_POST['room'];
-    $emailr1=$_POST['emailr1'];
-    $phone_nor1 =$_POST['phone_nor1'];
-    $emailr2=$_POST['emailr2'];
-    $phone_no2=$_POST['phone_no2'];
-    $email3=$_POST['email3'];
-    $phone_no3=$_POST['phone_no3'];
-
-
-
-    $email=sanitizeData($email);
-    $phone_no=sanitizeData($phone_no);
-    $hostel=sanitizeData($hostel);
-    //$roomtype=sanitizeData($roomtype);
-    $roommate=sanitizeData($roommate);
-    $room=sanitizeData($room);
-    $emailr1=sanitizeData($emailr1);
-    $phone_nor1=sanitizeData($phone_nor1);
-    $emailr2=sanitizeData($emailr2);
-    $phone_no2=sanitizeData($phone_no2);
-    $email3=sanitizeData($email3);
-    $phone_no3=sanitizeData($phone_no3);
-    //echo "one";
-    //$pass=sha1($pass);
-
-    //user should save info to bookHostel
-    //...code
-    /*if(Book::find_email($args['email'])){echo "gfd";echo Book::find_email($args['email']);return true;
-        $user->errors[]="a user already created an account with this email.";*/
-
-    //and redirect user to homepage
-    //$session->message('submitted succesful');
-    //redirect_to(URL.'../');
-
+   
 
 
 }
