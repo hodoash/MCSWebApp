@@ -1,9 +1,6 @@
 <?php
 	
 	
-	define("MODEL_PATH",dirname(__FILE__));
-	define("MCSPROJECT_PATH",dirname(MODEL_PATH));
-	define("VIEW_PATH",MCSPROJECT_PATH.'/viewandcontroller');
 	define("URL",'http://localhost/mcswebapp2/viewandcontroller');
 
 	//define the www root as well
