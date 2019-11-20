@@ -39,9 +39,9 @@ class Review extends DatabaseConn{
 	 * be the properties in the class
 	 */
 	public function __construct($name,$sub, $messages) {
-	    $this->subject = $sub;//$args['subject'] ?? '';
-	    $this->name = $name;//$args['email'] ?? '';
-	    $this->matter = $messages;//$args['phone_no'] ?? '';
+	    $this->subject = $sub;
+	    $this->name = $name;
+	    $this->matter = $messages;/
 	    
 	}
 

@@ -40,7 +40,7 @@ class Session{
 	 * this method creates a user, creates a session id and
 	 * keeps the users details in the session
 	 */
-	public function login($user){print_r($user);return true;
+	public function login($user){print_r($user);//return true;
     $this->userThis=$user;
 		if($this->userThis){
 			session_regenerate_id();//this line prevents fixation attacks
