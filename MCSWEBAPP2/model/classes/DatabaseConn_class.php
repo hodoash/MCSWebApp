@@ -39,31 +39,15 @@ class DatabaseConn{
 	 */
 	static public function find_sql($sql){
 		$result = self::$databaseName->query($sql);
-		if(!$result){
-			exit("query failed: check database.....");
-		}
+		//if(!$result){
+			//exit("query failed: check database.....");
+		//}
 		if(!$result){
 				return false;
 			}return $result->fetch_assoc();
-		//place results in array
-		//$obj_arr=[];
-		//while($record=$result->fetch_assoc()){
-		//$obj_arr[]=$result->fetch_assoc();
-			//$obj_arr[]=static::instantiate($record);
-		//}
-		//$result->free();
-		//return $obj_arr;
 	}
 
-	/*static protected function instantiate($record){
-		$obj= new static;
-		foreach($record as $property=> $value){
-			if(property_exists($object, $property)) {
-        		$object->$property = $value;
-      		}
-    	}return $object;
-	}*/
-
+	
 
 	//nono static functions
 
@@ -95,12 +79,7 @@ class DatabaseConn{
 	 * it is a form of encapsulation
 	 */
 	public function save() {
-    // A new record will not have an ID yet
-    /*if(isset($this->id)) {
-      return $this->update();
-    } else {
-      return $this->create();
-    }*/return $this->create();
+    return $this->create();
   }
 
 

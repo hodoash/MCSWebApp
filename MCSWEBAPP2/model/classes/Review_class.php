@@ -62,41 +62,17 @@ class Review extends DatabaseConn{
       	}
 		if(''===($this->subject)) {
 			$this->errors[] = "subject cannot be blank.";
-	  } elseif (strlen($this->subject)>50) {
+	  	} elseif (strlen($this->subject)>50) {
 			$this->errors[] = "subject must be between 2 and 50 characters.";
-	  }
-	  if(''===($this->matter)) {
+	  	}
+	  	if(''===($this->matter)) {
 		$this->errors[] = "comment cannot be blank.";
-  } elseif (strlen($this->matter)>225) {
+  		} elseif (strlen($this->matter)>225) {
 		$this->errors[] = "comment must be between 2 and 225 characters.";
-  }
+  		}
 
 	    return $this->errors;
 	}
-/*
-	static public function find_email($email) {
-    	$sql = "SELECT * FROM " . static::$tab_name ." WHERE email='" . self::$databaseName->escape_string($email) . "'";
-
-    	$obj_arr = static::find_sql($sql);
-    	//print_r($obj_arr);
-    	if(!empty($obj_arr)) {
-    		return $obj_arr;
-      		//return array_shift($obj_arr);
-    	} else {
-      		return false;
-    	}
-  	}
-  	static public function find_pass($pass) {
-    	$sql = "SELECT * FROM " . static::$tab_name ." WHERE password='" . self::$databaseName->escape_string($pass) . "'";
-
-    	$obj_arr = static::find_sql($sql);
-    	//print_r($obj_arr);
-    	if(!empty($obj_arr)) {
-      		return array_shift($obj_arr);
-    	} else {
-      		return false;
-    	}
-    }*/
 }
 
 ?>

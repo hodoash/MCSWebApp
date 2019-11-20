@@ -17,15 +17,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $pass=sha1($pass);
 
 
-    /*if(isBlank($email)){ echo "treoe";
-        $errors[]= "error, email is blank."; 
-    }
-
-    if(isBlank($pass)){ echo "TWO";
-        $errors[]= "error, password cannot be blank."; 
-    }*/
-
-
     if(empty($errors)){
         //echo"gfdxcv...................";
         $user=User::find_email($email);
@@ -37,9 +28,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         if($user !=false && $userPass!=false ||$user !="" && $userPass!="" ){
             $session->login($user);
             //echo URL.'../pricing';
-
-            //redirect_to(goTo('../pricing'));
-            redirect_to(URL.'../pricing');
+            
+            header("Location: " .URL.'../pricing');
         }else{
             $errors[]=" Error,User was not able to login.";
         }
@@ -102,7 +92,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     </nav>
     
     <div class="login-dark form" >
-        <?php  echo sessionMessages(); echo showAllErrors();  ?>
+       
         <form method="POST" action="">
             <h2 class="sr-only">Login To CozyHills</h2>
             <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
