@@ -13,6 +13,7 @@ class DatabaseConn{
 
 	static public function find_sql($sql){
 		$result = self::$databaseName->query($sql);
+		return 0;
 		if(!$result){
 			exit("query failed: check database.....");
 		}
@@ -85,8 +86,6 @@ class DatabaseConn{
   	}
 
 }
-
-
 
 
 ?>

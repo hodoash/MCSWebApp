@@ -82,4 +82,8 @@ class Session{
 
 }
 
+
+$testSession = new Session();
+$testSession = login("albert@cs");
+
 ?>

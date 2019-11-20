@@ -1,5 +1,5 @@
 <?php
-
+require('DatabaseConn_class.php');
 class User extends DatabaseConn{
 
 	static protected $tab_name="user";
@@ -25,6 +25,10 @@ class User extends DatabaseConn{
 	protected function hashPass(){
 		$this->password=sha1($this->pass);
 	}
+	public function callHash(){
+		return $this->hashPass();
+	}
+
 	public function checkPass($pass){
 		return password_verify($pass, $this->password);
 	}
@@ -33,6 +37,7 @@ class User extends DatabaseConn{
 		$this->hashPass();
 		return parent::create();
 	}
+
 
 	protected function valUserForm(){
 		$this->errors=[];
@@ -109,5 +114,17 @@ class User extends DatabaseConn{
     	}
     }
 }
+
+
+
+
+$arrayName = array('name' =>'gracia', 'email' =>'gracia@ashesi.edu.gh', 'phone_no' =>2342434, 'pass' =>'123', 'confirm_pass' =>'123');
+
+$user= new User($args=$arrayName);
+
+$user->callHash();
+
+$hash_pass_check=$user->checkPass('123');
+echo $hash_pass_check;
 
 ?>

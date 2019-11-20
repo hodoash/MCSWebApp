@@ -16,7 +16,7 @@
         return $data;
     }
 
-    function chechEmail($value){
+    function checkEmail($value){
     	$email_regex = '/\A[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\Z/i';
     	return preg_match($email_regex, $value) === 1;
     }
@@ -26,5 +26,6 @@
             return false;
         }return true ;
     }
+
 
 ?>
