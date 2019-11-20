@@ -11,7 +11,7 @@
 	$root=substr($_SERVER['SCRIPT_NAME'],0,$endOfView);
 	define("WWW_ROOT",$root);
 
-	require_once('functionsModule.php');
+	
 	require_once('form_validation.php');
 	require_once('mcs_db_credentials.php');
 	require_once('mcs_database_functions.php');
