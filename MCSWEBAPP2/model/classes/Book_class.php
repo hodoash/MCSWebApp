@@ -1,12 +1,29 @@
 <?php
-
+/**
+ * A summary of the book class
+ *
+ *The book class allows users to book for hostel and rooms
+ *and sends data to the database for storage as well as 
+ *validates the data and much more.
+ *
+ * @since version 0.01
+ * @author hodoash
+ */
 class Book extends DatabaseConn{
 
+	/**#@+
+	 * @access protected 
+	 * @staticvar
+	 */
 	static protected $tab_name1="bookings";
 	static protected $tab_name2="roommates";
 	static protected $bookings_col=['id','hostel','roommate','u_id'];
 	static protected $roommates_col=['id','rm_email','rm_phone_no','u_id'];
 
+	/**#@+
+	 * @access public 
+	 * 
+	 */
 	public $email;
     public $phone_no;
     public $hostel;
@@ -25,6 +42,12 @@ class Book extends DatabaseConn{
 
 
 
+	/**
+	 * @param string array
+	 * @return void
+	 * this contructor takes an array of values that would
+	 * be the properties
+	 */
 	public function __construct($args=[]) {
 	    $this->email = $args['email'] ?? '';
 	    $this->hostel = $args['hostel'] ?? '';
@@ -57,17 +80,24 @@ class Book extends DatabaseConn{
 		$this->hashPass();
 		return parent::create();
 	}
+*/
 
+	/**
+	 * @return array
+	 * @param void
+	 * this method does backend validation for form input
+	 * and returns an array of errors if any
+	 */
 	protected function valUserForm(){
 		$this->errors=[];
 
-		if(is_blank($this->name)) {
+		if(''===($this->name)) {
       		$this->errors[] = "Name cannot be blank.";
     	} elseif (!has_length($this->name, array('min' => 2, 'max' => 100))) {
       		$this->errors[] = "Name must be between 2 and 100 characters.";
     	}
 
-	    if(is_blank($this->email)) {
+	    if(''===($this->email)) {//echo "two";return true;
 	     	$this->errors[] = "Email cannot be blank.";
 	    } elseif (!has_length($this->email, array('max' => 255))) {
 	      	$this->errors[] = " email must be less than 255 characters.";
@@ -76,39 +106,26 @@ class Book extends DatabaseConn{
 	    }
 
 
-	    if(is_blank($this->phone_number)) {
+	    if(''===($this->phone_no)) {
 	    	$this->errors[] = "Phone Number cannot be blank.";
-	    } elseif (!has_length($this->phone_number, array('max' => 10))) {
+	    } elseif (!has_length($this->phone_no, array('max' => 10))) {
 	      	$this->errors[] = "Invalid Phone Number";
-	    } elseif (!has_length($this->phone_number, array('min' => 10))) {
+	    } elseif (!has_length($this->phone_no, array('min' => 10))) {
 	      	$this->errors[] = "Invalid Phone Number";
 	    }
 
-	
-	    if($this->password_required) {
-	    	if(is_blank($this->pass)) {
-	        	$this->errors[] = "Password cannot be blank.";
-	      	} elseif (!has_length($this->password, array('min' => 8))) {
-	        	$this->errors[] = "Password must contain 12 or more characters";
-	        } elseif (!preg_match('/[A-Z]/', $this->password)) {
-	        	$this->errors[] = "Password must contain at least 1 uppercase letter";
-	        } elseif (!preg_match('/[a-z]/', $this->password)) {
-	        	$this->errors[] = "Password must contain at least 1 lowercase letter";
-	      	} elseif (!preg_match('/[0-9]/', $this->password)) {
-	        	$this->errors[] = "Password must contain at least 1 number";
-	      	} 
-
-	        if(is_blank($this->confirm_pass)) {
-	        	$this->errors[] = "Confirm password cannot be blank.";
-	        } elseif ($this->pass !== $this->confirm_pass) {
-	        	$this->errors[] = "Password and confirm password must match.";
-	      	}
-	    }
 
 	    return $this->errors;
-	}*/
+	}
 
 
+	/**
+	 * @param string 
+	 * @return bool ||array
+	 * this method accepts a user id as a parameter and quarries 
+	 * a table in a database to find a row of object and returns that
+	 * or false if none was found
+	 */
 	static public function find_roommates($u_id) {
     	$sql = "SELECT * FROM " . static::$tab_name ." WHERE u_id='" . self::$databaseName->escape_string($email) . "'";
 
@@ -134,7 +151,13 @@ class Book extends DatabaseConn{
       		return false;
     	}
   	}*/
-  	
+  	/**
+	 * @param string 
+	 * @return bool ||array
+	 * this method accepts an emal as a parameter and quarries 
+	 * a table in a database to find a row of object and returns that
+	 * or false if none was found
+	 */
   	static public function find_email($email) {
     	$sql = "SELECT * FROM " . static::$tab_name ." WHERE email='" . self::$databaseName->escape_string($pass) . "'";
 

@@ -1,10 +1,28 @@
 <?php
-
+/**
+ * A summary of the user class
+ *
+ *The user class is a class that is used to create instances of a user or a client 
+ *and this client can do validation and quarries.
+ *
+ * @since version 0.01
+ * @author hodoash
+ */
 class User extends DatabaseConn{
-
+	/**
+	 * @staticvar 
+	 * this is a static variable that stores the table name for quarries
+	 */
 	static protected $tab_name="user";
+	/**
+	 * @saticvar
+	 * this is a static array that stores the columns for the table for quarries
+	 */
 	static protected $colmns=['id','name','password','email','phone_no'];
-
+	/**#@+
+	 * @access public 
+	 * 
+	 */
 	public $id;
 	public $name;
 	public $email;
@@ -13,7 +31,12 @@ class User extends DatabaseConn{
 	public $confirm_pass;
 	protected $password;//hashed version
 	protected $password_required = true;
-
+	/**
+	 * @param string array
+	 * @return void
+	 * this contructor takes an array of values that would
+	 * be the properties
+	 */
 	public function __construct($args=[]) {
 	    $this->name = $args['name'] ?? '';
 	    $this->email = $args['email'] ?? '';
@@ -21,19 +44,38 @@ class User extends DatabaseConn{
 	    $this->pass = $args['pass'] ?? '';
 	    $this->confirm_pass = $args['confirm_pass'] ?? '';
 	}
-
+	/**
+	 * @param void
+	 * @return void
+	 * this method creates a hashed version of the password
+	 */
 	protected function hashPass(){
 		$this->password=sha1($this->pass);
 	}
+	/**
+	 * @param password
+	 * this method accepts a password and verifies that it
+	 * has the hashed version
+	 */
 	public function checkPass($pass){
 		return password_verify($pass, $this->password);
 	}
-
+	/**
+	 * @param void
+	 * @return 
+	 * this method creates a user, sends the information into 
+	 * the user table in the database as well and returns nothing
+	 */
 	protected function create(){
 		$this->hashPass();
 		return parent::create();
 	}
-
+	/**
+	 * @return array
+	 * @param void
+	 * this method does backend validation for form input
+	 * and returns an array of errors if any
+	 */
 	protected function valUserForm(){
 		$this->errors=[];
 
@@ -84,7 +126,13 @@ class User extends DatabaseConn{
 	    return $this->errors;
 	}
 
-
+	/**
+	 * @param string 
+	 * @return bool ||array
+	 * this method accepts an emal as a parameter and quarries 
+	 * a table in a database to find a row of object and returns that
+	 * or false if none was found
+	 */
 	static public function find_email($email) {
     	$sql = "SELECT * FROM " . static::$tab_name ." WHERE email='" . self::$databaseName->escape_string($email) . "'";
 
@@ -96,7 +144,7 @@ class User extends DatabaseConn{
     	} else {
       		return false;
     	}
-  	}
+  	}/*
   	static public function find_pass($pass) {
     	$sql = "SELECT * FROM " . static::$tab_name ." WHERE password='" . self::$databaseName->escape_string($pass) . "'";
 
@@ -107,7 +155,7 @@ class User extends DatabaseConn{
     	} else {
       		return false;
     	}
-    }
+    }*/
 }
 
 ?>

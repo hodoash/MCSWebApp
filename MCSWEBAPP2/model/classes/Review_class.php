@@ -1,16 +1,43 @@
 <?php
-
+/**
+ * A summary of the review class
+ *
+ *The review class takes contains the code for 
+ *alowing people to review hostels.
+ *It adds the info to the databas which would later be retrived.  
+ *
+ * @since version 0.01
+ * @author hodoash
+ */
 class Review extends DatabaseConn{
 
+	/**
+	 * @saticvar
+	 * this is a static array that stores the columns for the table for quarries
+	 */
 	static protected $tab_name="review";
+	/**
+	 * @saticvar
+	 * this is a static array that stores the columns for the table for quarries
+	 */
 	static protected $colmns=['id','name','subject','matter'];
 
+	/**#@+
+	 * @access public 
+	 * 
+	 */
 	public $id;
 	public $u_id;
 	public $subject;
 	public $matter;
 	
 
+	/**
+	 * @param string 
+	 * @return void
+	 * this contructor takes values that would
+	 * be the properties in the class
+	 */
 	public function __construct($name,$sub, $messages) {
 	    $this->subject = $sub;//$args['subject'] ?? '';
 	    $this->name = $name;//$args['email'] ?? '';
@@ -19,58 +46,34 @@ class Review extends DatabaseConn{
 	}
 
 	
-/*
+    /**
+	 * @return array
+	 * @param void
+	 * this method does backend validation for form input
+	 * and returns an array of errors if any
+	 */
 	protected function valUserForm(){
 		$this->errors=[];
 
-		if(is_blank($this->name)) {
+		if(''===($this->name)) {
       		$this->errors[] = "Name cannot be blank.";
     	} elseif (!has_length($this->name, array('min' => 2, 'max' => 100))) {
       		$this->errors[] = "Name must be between 2 and 100 characters.";
-    	}
-
-	    if(is_blank($this->email)) {
-	     	$this->errors[] = "Email cannot be blank.";
-	    } elseif (!has_length($this->email, array('max' => 255))) {
-	      	$this->errors[] = " email must be less than 255 characters.";
-	    } elseif (!has_valid_email_format($this->email)) {
-	      	$this->errors[] = "Email must be a valid format.";
-	    }
-
-
-	    if(is_blank($this->phone_number)) {
-	    	$this->errors[] = "Phone Number cannot be blank.";
-	    } elseif (!has_length($this->phone_number, array('max' => 10))) {
-	      	$this->errors[] = "Invalid Phone Number";
-	    } elseif (!has_length($this->phone_number, array('min' => 10))) {
-	      	$this->errors[] = "Invalid Phone Number";
-	    }
-
-	
-	    if($this->password_required) {
-	    	if(is_blank($this->pass)) {
-	        	$this->errors[] = "Password cannot be blank.";
-	      	} elseif (!has_length($this->password, array('min' => 8))) {
-	        	$this->errors[] = "Password must contain 12 or more characters";
-	        } elseif (!preg_match('/[A-Z]/', $this->password)) {
-	        	$this->errors[] = "Password must contain at least 1 uppercase letter";
-	        } elseif (!preg_match('/[a-z]/', $this->password)) {
-	        	$this->errors[] = "Password must contain at least 1 lowercase letter";
-	      	} elseif (!preg_match('/[0-9]/', $this->password)) {
-	        	$this->errors[] = "Password must contain at least 1 number";
-	      	} 
-
-	        if(is_blank($this->confirm_pass)) {
-	        	$this->errors[] = "Confirm password cannot be blank.";
-	        } elseif ($this->pass !== $this->confirm_pass) {
-	        	$this->errors[] = "Password and confirm password must match.";
-	      	}
-	    }
+		}
+		if(''===($this->subject)) {
+			$this->errors[] = "subject cannot be blank.";
+	  } elseif (!has_length($this->subject, array('min' => 2, 'max' => 100))) {
+			$this->errors[] = "subject must be between 2 and 100 characters.";
+	  }
+	  if(''===($this->matter)) {
+		$this->errors[] = "comment cannot be blank.";
+  } elseif (!has_length($this->matter, array('min' => 2, 'max' => 100))) {
+		$this->errors[] = "comment must be between 2 and 100 characters.";
+  }
 
 	    return $this->errors;
 	}
-
-
+/*
 	static public function find_email($email) {
     	$sql = "SELECT * FROM " . static::$tab_name ." WHERE email='" . self::$databaseName->escape_string($email) . "'";
 

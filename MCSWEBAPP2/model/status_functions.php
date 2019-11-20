@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * needs the user to be loged in before the usr can continue
+ */
 function requireLogin(){
 	global $session;
 	if(!$session->isLogedIn()){
@@ -9,6 +12,9 @@ function requireLogin(){
 	}
 }
 
+/**
+ * displays all errors generated when called
+ */
 function showAllErrors($errors=array()){
 	$errResult='';
 	if(!empty($errors)){
@@ -20,6 +26,11 @@ function showAllErrors($errors=array()){
 	}
 } 
 
+/**
+ * @return bool
+ * checks to see if user info is stored
+ * in session or not
+ */
 function checkLogin(){
 	global $session;
 	if(!$session->isLogedIn()){
@@ -28,7 +39,9 @@ function checkLogin(){
 		return true;
 	}
 }
-
+/**
+ * alerts session messages
+ */
 function sessionMessages(){
 	global $session;
 	$mess='';
