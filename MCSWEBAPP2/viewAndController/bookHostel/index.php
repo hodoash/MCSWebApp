@@ -3,14 +3,52 @@
 require_once('../../model/settings.php');
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    requireLogin();
-    $args=$_POST['book'];
+    //requireLogin();
+    //echo "yes";
+    $bargs=$_POST['book'];//print_r($bargs); echo "one";return true;
+    $book=new Book($bargs);//print_r($book); echo "one";return true;
+    //$arrBook=[/*$_POST['book[hostel]'],*/$_POST['book[email]']];
+    //$arrRoom=[$book['rm_email'],$book['rm_phone_no']];
+    //print_r($arrBook);return true;
+    //return false;
+    /*$email= $_POST['book[email]'];// ?? '';
+    $phone_no=$_POST['phone_no'];// ?? '';
+    $hostel= $_POST['hostel'];// ?? '';
+    //$roomtype=$_POST['room'];
+    $roommate=$_POST['roommate'];
+    $room=$_POST['room'];
+    $emailr1=$_POST['emailr1'];
+    $phone_nor1 =$_POST['phone_nor1'];
+    $emailr2=$_POST['emailr2'];
+    $phone_no2=$_POST['phone_no2'];
+    $email3=$_POST['email3'];
+    $phone_no3=$_POST['phone_no3'];
+
+
+
+    $email=sanitizeData($email);
+    $phone_no=sanitizeData($phone_no);
+    $hostel=sanitizeData($hostel);
+    //$roomtype=sanitizeData($roomtype);
+    $roommate=sanitizeData($roommate);
+    $room=sanitizeData($room);
+    $emailr1=sanitizeData($emailr1);
+    $phone_nor1=sanitizeData($phone_nor1);
+    $emailr2=sanitizeData($emailr2);
+    $phone_no2=sanitizeData($phone_no2);
+    $email3=sanitizeData($email3);
+    $phone_no3=sanitizeData($phone_no3);
+    //echo "one";
+    //$pass=sha1($pass);
+
     //user should save info to bookHostel
     //...code
+    /*if(Book::find_email($args['email'])){echo "gfd";echo Book::find_email($args['email']);return true;
+        $user->errors[]="a user already created an account with this email.";*/
 
     //and redirect user to homepage
-    $session->message('submitted succesful');
-    redirect_to(URL.'../');
+    //$session->message('submitted succesful');
+    //redirect_to(URL.'../');
 
 
 
@@ -72,27 +110,28 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                     <h2 class="text-info">Booking</h2>
                     <p>Choose from any of our three homes to be your next home</p>
                 </div>
-                <form>
-                    <div class="form-group"><label>Email</label><input class="form-control" type="email"></div>
-                    <div class="form-group"><label>Phone Number</label><input class="form-control" type="text"></div>
+                <form method="POST" action="">
+                    <div class="form-group"><label>Email</label><input class="form-control" name="book[email]"value="<?php echo h($book->email);?>" type="email"></div>
+                    <div class="form-group"><label>Phone Number</label><input class="form-control" name="book[phone_no]" value="<?php echo h($book->phone_no);?>" type="text"></div>
                     <div class="form-group"><label>Hostel</label>
-                        <div class="dropdown"><button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button">Dropdown </button>
-                            <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
+                        <div class="dropdown"><button class="btn btn-primary dropdown-toggle" value="<?php echo h($book->hostel);?>" data-toggle="dropdown" aria-expanded="false" type="button">Dropdown </button>
+                            <ul class="dropdown-menu" role="menu"><li><a class="dropdown-item" role="presentation" name="book[hostel]" href="#">Hosanna</a></li><li><a class="dropdown-item" role="presentation" name="book[hostel]" href="#">Dufie</a></li><li><a class="dropdown-item" name="book[hostel]" role="presentation" href="#">Charlotte</a></li></ul>
                         </div>
+
                     </div>
-                    <div class="form-group"><label>Room Type</label>
-                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-2"><label class="form-check-label" for="formCheck-2">2-person</label></div>
-                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-2"><label class="form-check-label" for="formCheck-2">3-person</label></div>
-                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-2"><label class="form-check-label" for="formCheck-2">4-person</label></div>
-                    </div>
+                    <!--<div class="form-group"><label>Room Type</label>
+                        <div class="form-check"><input class="form-check-input" name="room" type="radio" id="formCheck-2"><label class="form-check-label" for="formCheck-2">2-person</label></div>
+                        <div class="form-check"><input class="form-check-input" name="room" type="radio" id="formCheck-2"><label class="form-check-label" for="formCheck-2">3-person</label></div>
+                        <div class="form-check"><input name="room" class="form-check-input" type="radio" id="formCheck-2"><label class="form-check-label" for="formCheck-2">4-person</label></div>
+                    </div>-->
                     <div class="form-group"><label>Bringing a roommate?</label>
-                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-2"><label class="form-check-label" for="formCheck-2">Yes</label></div>
-                        <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-2"><label class="form-check-label" for="formCheck-2">No</label></div>
+                        <div class="form-check"><input class="form-check-input" type="radio"  name="book[roommate]" id="formCheck-2"><label class="form-check-label" for="formCheck-2">Yes</label></div>
+                        <div class="form-check"><input name="book[roommate]" class="form-check-input" type="radio" id="formCheck-2"><label class="form-check-label" for="formCheck-2">No</label></div>
                     </div>
                     <div class="form-group"><label>Roommate's Email &amp; Number</label>
-                        <section></section><label>Roommate 1(Email, Phone Number)</label><input class="form-control" type="email"><input class="form-control" type="tel"><label>Roommate 2(Email, Phone Number)</label><input class="form-control" type="email">
-                        <input
-                            class="form-control" type="tel"><label>Roommate 3(Email, Phone Number)</label><input class="form-control" type="email"><input class="form-control" type="tel"></div><button class="btn btn-primary" type="button">Book Now!</button></form>
+                        <label>Roommate 1(Email, Phone Number)</label><input name="book[emailr1]" value="<?php echo h($user->emailr1);?>" placeholder="roommate's email" class="form-control" type="email"><br><input name="phone_nor1" value="<?php echo h($book->rm_phone_no);?>" placeholder="roommates phone number" class="form-control" type="tel"><br><label>Roommate 2(Email, Phone Number)</label><input name="book[emailr2]" value="<?php echo h($book->emailr2);?>" placeholder="roommate's email" class="form-control" type="email"><br>
+                        <input name="book[phone_no2]" value="<?php echo h($book->phone_no2);?>" placeholder="roommate's phone number" 
+                            class="form-control"  type="tel"><br>   <label>Roommate 3(Email, Phone Number)</label><input name="book[email3]" placeholder="roommate's email" class="form-control" type="email"><br><input name="book[phone_no3]" placeholder="roommate's number" value="<?php echo h($book->phone_no3);?>" class="form-control" type="tel"></div><button class="btn btn-primary" type="submit">Book Now!</button></form>
                 <div class="block-heading">
                     <h2 class="text-info">Send Your Receipt</h2>
                     <p>Send your receipt now to confirm your reservation</p>

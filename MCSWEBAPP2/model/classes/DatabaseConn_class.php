@@ -16,23 +16,27 @@ class DatabaseConn{
 		if(!$result){
 			exit("query failed: check database.....");
 		}
+		if(!$result){
+				return false;
+			}return $result->fetch_assoc();
 		//place results in array
-		$obj_arr=[];
-		while($record=$result->fetch_assoc()){
-			$obj_arr[]=static::instantiate($record);
-		}
-		$result->free();
-		return $obj_arr;
+		//$obj_arr=[];
+		//while($record=$result->fetch_assoc()){
+		//$obj_arr[]=$result->fetch_assoc();
+			//$obj_arr[]=static::instantiate($record);
+		//}
+		//$result->free();
+		//return $obj_arr;
 	}
 
-	static protected function instantiate($record){
+	/*static protected function instantiate($record){
 		$obj= new static;
 		foreach($record as $property=> $value){
 			if(property_exists($object, $property)) {
         		$object->$property = $value;
       		}
     	}return $object;
-	}
+	}*/
 
 
 	//nono static functions
@@ -40,10 +44,12 @@ class DatabaseConn{
 	protected function create(){
 		$attributes = $this->sanitized_attributes();
 	    $sql = "INSERT INTO " . static::$tab_name . " (";
-	    $sql .= join(', ', array_keys($attributes));
+	    $sql .= join(',', array_keys($attributes));
 	    $sql .= ") VALUES ('";
-	    $sql .= join("', '", array_values($attributes));
+	    $sql .= join("','", array_values($attributes));
 	    $sql .= "')";
+	    //echo $sql;
+	    //return false;
 	    $result = self::$databaseName->query($sql);
 	    if($result) {
 	      $this->id = self::$databaseName->insert_id;

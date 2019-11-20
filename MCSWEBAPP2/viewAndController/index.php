@@ -1,14 +1,18 @@
 <?php
 	
 require_once('../model/settings.php');	
-$user=new User($args);
+
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 	$args=$_POST['user'];
-	
+    $user=new User($args);
+ //    $smth = User::find_email($args['email']);
+ //    echo "smth";
+	// return true;
 	if(User::find_email($args['email'])){
 		$user->errors[]="a user already created an account with this email.";
+
 	}else{
 		$result=$user->save();
 		if($result){
@@ -18,6 +22,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		}else{/*................*/}
 	}
 }
+
+
 
 
 
@@ -73,8 +79,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         <main class="page landing-page">
             <section class="clean-block clean-hero" style="background-image:url(&quot;assets/img/undraw_best_place_r685.svg&quot;);color:rgba(55,149,207,0.85);background-position:center;background-size:cover;background-repeat:no-repeat;">
                 <div class="text">
-                    <h2>Lorem ipsum dolor sit amet.</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p><button class="btn btn-outline-light btn-lg" type="button">Learn More</button></div>
+                    <h2>We are CozyHills .</h2>
+                    <p>We bring you to the doorsteps of the hostels on the Berekusu Hill.  We enable you book hostels from the comfort of your home or anywhere you find yourself.</p><button class="btn btn-outline-light btn-lg" type="button">Learn More</button></div>
             </section>
             <section class="clean-block about-us">
                 <div class="container">

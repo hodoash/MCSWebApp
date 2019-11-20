@@ -35,7 +35,7 @@
                     <li class="nav-item" role="presentation"><a class="nav-link" href="../pricing/index.php">Pricing</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="../bookHostel/index.php">Book a Hostel</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="../review/index.php">Review</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="contactUs/index.php">Contact Us</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="../contactUs/index.php">Contact Us</a></li>
                 </ul>
                 <ul class="nav navbar-nav">
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="../login/index.php"><i class="fa fa-user"></i>login</a></li>

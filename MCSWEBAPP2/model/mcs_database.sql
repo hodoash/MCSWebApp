@@ -14,10 +14,9 @@ CREATE TABLE  user  (
 
 CREATE TABLE review(
   id int NOT NULL AUTO_INCREMENT,
-  u_id int(8) NOT NULL,
+  name char(20) NOT NULL,
   subject VARCHAR(40) NOT NULL,
   matter VARCHAR (224) NOT NULL,
-  FOREIGN KEY (u_id) REFERENCES user(id),
   PRIMARY KEY(id)
 );
 
@@ -25,7 +24,7 @@ CREATE TABLE review(
 CREATE TABLE bookings(
   id int NOT NULL AUTO_INCREMENT,
   hostel char(10) NOT NULL,
-  roomtype int(1) NOT NULL,
+  #roomtype int(1) NOT NULL,
   roommate int(1) NOT NULL,
   u_id int(8) NOT NULL,
   FOREIGN KEY(u_id) REFERENCES user(id),

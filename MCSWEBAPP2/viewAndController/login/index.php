@@ -2,26 +2,43 @@
 require_once('../../model/settings.php');  
 
 $errors=[];
-$email='';
-$pass='';
+$user=[];
+//$email='';
+//$pass='';
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    $email=$_POST['email'] ?? '';
-    $pass=$_POST['pass'] ?? '';
+    //echo "one";
+    //echo $_POST['email'];
+    $email= $_POST['email'];// ?? '';
+    $pass=$_POST['pass'];// ?? '';
 
-    if(isBlank($email)){
-        $errors[]= "error, email is blank.";
+    $email=sanitizeData($email);
+    $pass=sanitizeData($pass);
+    $pass=sha1($pass);
+
+
+    /*if(isBlank($email)){ echo "treoe";
+        $errors[]= "error, email is blank."; 
     }
 
-    if(isBlank($pass)){
-        $errors[]= "error, password cannot be blank.";
-    }
+    if(isBlank($pass)){ echo "TWO";
+        $errors[]= "error, password cannot be blank."; 
+    }*/
+
 
     if(empty($errors)){
-        echo"gfdxcv...................";
+        //echo"gfdxcv...................";
         $user=User::find_email($email);
-        if($user !=false && $user->checkPass($pass)){
+        $userPass=$user['password'];//echo $userPass;
+        //$userPass=User::find_pass($pass);
+        //print_r($user) ;return true;
+
+        //return true;
+        if($user !=false && $userPass!=false ||$user !="" && $userPass!="" ){
             $session->login($user);
+            //echo URL.'../pricing';
+
+            //redirect_to(goTo('../pricing'));
             redirect_to(URL.'../pricing');
         }else{
             $errors[]=" Error,User was not able to login.";
@@ -74,7 +91,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                     <li class="nav-item" role="presentation"><a class="nav-link" href="../pricing/index.php">Pricing</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="../bookHostel/index.php">Book a Hostel</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="../review/index.php">Review</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="contactUs/index.php">Contact Us</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="../contactUs/index.php">Contact Us</a></li>
                 </ul>
                 <ul class="nav navbar-nav">
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="../login/index.php"><i class="fa fa-user"></i>login</a></li>
@@ -86,11 +103,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     
     <div class="login-dark form" >
         <?php  echo sessionMessages(); echo showAllErrors();  ?>
-        <form method="post" action="">
+        <form method="POST" action="">
             <h2 class="sr-only">Login To CozyHills</h2>
             <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
-            <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email"></div>
-            <div class="form-group"><input class="form-control" type="password" name="pass" placeholder="Password"></div>
+            <div class="form-group"><input class="form-control" type="email" name="email" value="email"placeholder="Email"></div>
+            <div class="form-group"><input class="form-control" type="password" value="pass" name="pass" placeholder="Password"></div>
             <div class="form-group"><button name="submit" class="btn btn-primary btn-block" type="submit">Log In</button></div><a href="#" class="forgot">Forgot your email or password?</a></form>
     </div>
 

@@ -1,3 +1,47 @@
+
+<?php
+require_once('../../model/settings.php');  
+
+$errors=[];
+//$user=[];
+//$email='';
+//$pass='';
+
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    //echo "one";
+    //echo $_POST['email'];
+    $name= $_POST['name'];// ?? '';
+    $sub=$_POST['sub'];// ?? '';
+    $messages=$_POST['messages'];
+
+    $name=sanitizeData($name);
+    $sub=sanitizeComment($sub);
+    $messages=sanitizeComment($messages);
+
+
+
+    //echo $messages; return true;
+    if(empty($errors)){
+        $review=new Review($name,$sub,$messages);
+        //echo $review->name;
+       $result=$review->save();
+        if($result){
+            //$new_id=$review->id;
+            $session->message('added review succesful');
+            //echo $review->messages;
+        }    //redirect_to(URL.'/login');
+       
+    }
+    else{
+            $errors[]=" Error,User was not able add review.";
+        }
+    
+
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -51,11 +95,11 @@
                     <h2 class="text-info">Tell Us What You Think</h2>
                     <p>Thoughts, problems or anything you especially loved about any of the hostels. Let us know, so we can improve to provide better services or help keep us on the right track.</p>
                 </div>
-                <form>
-                    <div class="form-group"><label>Name</label><input class="form-control" type="text"></div>
-                    <div class="form-group"><label>Subject</label><input class="form-control" type="text"></div>
-                    <div class="form-group"><label>Message</label><textarea class="form-control"></textarea></div>
-                    <div class="form-group"><button class="btn btn-primary btn-block" type="button">Send</button></div>
+                <form method="POST" action="">
+                    <div class="form-group"><label>Name</label><input class="form-control" name="name"  type="text"></div>
+                    <div class="form-group"><label>Subject</label><input class="form-control" name="sub" type="text"></div>
+                    <div class="form-group"><label>Message</label><textarea name="messages" class="form-control"></textarea></div>
+                    <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Send</button></div>
                 </form>
             </div>
         </section>

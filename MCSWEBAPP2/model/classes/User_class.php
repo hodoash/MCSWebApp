@@ -87,13 +87,27 @@ class User extends DatabaseConn{
 
 	static public function find_email($email) {
     	$sql = "SELECT * FROM " . static::$tab_name ." WHERE email='" . self::$databaseName->escape_string($email) . "'";
+
     	$obj_arr = static::find_sql($sql);
+    	//print_r($obj_arr);
+    	if(!empty($obj_arr)) {
+    		return $obj_arr;
+      		//return array_shift($obj_arr);
+    	} else {
+      		return false;
+    	}
+  	}
+  	static public function find_pass($pass) {
+    	$sql = "SELECT * FROM " . static::$tab_name ." WHERE password='" . self::$databaseName->escape_string($pass) . "'";
+
+    	$obj_arr = static::find_sql($sql);
+    	//print_r($obj_arr);
     	if(!empty($obj_arr)) {
       		return array_shift($obj_arr);
     	} else {
       		return false;
     	}
-  	}
+    }
 }
 
 ?>

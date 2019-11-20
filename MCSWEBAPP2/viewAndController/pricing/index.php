@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 
@@ -62,7 +64,7 @@
                                 <h4><span class="feature">2-person:&nbsp;</span><span>4000$</span></h4>
                                 <h4><span class="feature">3-person:&nbsp;</span><span>3000$</span></h4>
                                 <h4><span class="feature">4-person:&nbsp;</span><span>2000$</span></h4>
-                            </div><form method="GET" action="../bookHostel/index"><button class="btn btn-outline-primary btn-block" type="submit">Book Now!</button></form></div>
+                            </div><form method="GET" action="../bookHostel/"><button class="btn btn-outline-primary btn-block" type="submit">Book Now!</button></form></div>
                     </div>
                     <div class="col-md-5 col-lg-4">
                         <div class="clean-pricing-item">
@@ -75,7 +77,7 @@
                                 <h4><span class="feature">2-person:&nbsp;</span><span>4000$</span></h4>
                                 <h4><span class="feature">3-person:&nbsp;</span><span>3000$</span></h4>
                                 <h4><span class="feature">4-person:&nbsp;</span><span>2000$</span></h4>
-                            </div><form method="GET" action="../bookHostel/index"><button class="btn btn-outline-primary btn-block" type="submit">Book Now!</button></form></div>
+                            </div><form method="GET" action="../bookHostel/"><button class="btn btn-outline-primary btn-block" type="submit">Book Now!</button></form></div>
                     </div>
                     <div class="col-md-5 col-lg-4">
                         <div class="clean-pricing-item">
@@ -88,7 +90,7 @@
                                 <h4><span class="feature">2-person:&nbsp;</span><span>4000$</span></h4>
                                 <h4><span class="feature">3-person:&nbsp;</span><span>3000$</span></h4>
                                 <h4><span class="feature">4-person:&nbsp;</span><span>2000$</span></h4>
-                            </div><form method="GET" action="../bookHostel/index"><button class="btn btn-outline-primary btn-block" type="submit">Book Now!</button></form></div>
+                            </div><form method="GET" action="../bookHostel/"><button class="btn btn-outline-primary btn-block" type="submit">Book Now!</button></form></div>
                     </div>
                 </div>
             </div>
