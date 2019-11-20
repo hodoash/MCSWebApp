@@ -6,7 +6,7 @@
 function requireLogin(){
 	global $session;
 	if(!$session->isLogedIn()){
-		redirect_to(URL.'../login');
+		 header("Location: " .URL.'../login');
 	}else{
 		//.............allow the page....................
 	}
@@ -20,7 +20,7 @@ function showAllErrors($errors=array()){
 	if(!empty($errors)){
 		$errResult.="<div class=\"alert alert-danger\"style='text-align:left;'> <ul>";
 		foreach($errors as $err){
-			$errResult.="<li>".h($err)."</li>";
+			$errResult.="<li>".$err."</li>";
 		}$errResult.="</ul> </div>";
 
 	}

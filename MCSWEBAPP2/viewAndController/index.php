@@ -7,12 +7,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 	$args=$_POST['user'];
     $user=new User($args);
-    //$method = new ReflectionMethod('User', 'valUserForm');
-    //$method->setAccessible(true);
-    //$errors= $method->invoke($user=new User($args));print_r($errors);return true;
-    //User::valUserForm();
-    //print_r($errors);
-    //return true;
+   
     $errors=$user->validateData();//print_r($errors);return true;
 
 
@@ -27,13 +22,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     		$result=$user->save();
     		if($result){
     			$new_id=$user->id;
-    			$session->message('creation succesful');
-    			redirect_to(URL.'/login');
+    			
+                header("Location: " .URL.'/login');
     		}else{/*................*/}
     	}
     }else{//print_r($errors);
-    //showAllErrors(); 
-        //redirect_to(URL.'/');
+   
     }
 }
 
@@ -71,7 +65,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     </head>
 
     <body>
-        <?php  echo showAllErrors($errors); ?>
+       
         <nav class="navbar navbar-light navbar-expand-md">
             <div class="container-fluid"><a class="navbar-brand" href="#">CozyHill</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-2"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse justify-content-center align-items-stretch"
@@ -170,7 +164,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                     <div class="block-heading">
                         <h2 class="text-info">Sign Up To Enjoy The Full Package</h2>
                     </div>
-                     <?php echo showAllErrors();  ?>
+                    
                     <form method="POST" action="">
                         <div class="form-group"><label>Name</label><input name="user[name]" placeholder="Enter your name" class="form-control" type="text"></div>
                         <div class="form-group"><label>Phone Number</label><input name="user[phone_no]" placeholder="Enter your phone_no" class="form-control" type="tel"></div>

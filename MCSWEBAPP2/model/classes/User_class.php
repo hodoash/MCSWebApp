@@ -57,6 +57,7 @@ class User extends DatabaseConn{
 		$this->password=sha1($this->pass);
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	public function callHash(){
 		return $this->hashPass();
 	}
@@ -71,6 +72,9 @@ class User extends DatabaseConn{
 	public function checkPass($pass){
 		return password_verify($pass, $this->password);
 	}
+=======
+	
+>>>>>>> 9f635f263d3af9c295fd79c5164da5a7f1aa3fc2
 	/**
 	 * @param void
 	 * @return 
@@ -87,6 +91,7 @@ class User extends DatabaseConn{
 	protected function valUserForm(){
 =======
 	
+<<<<<<< HEAD
 	/*public function valUserForm(){
 >>>>>>> d0146c4aa6d7313eee643440fdb3203813fdc388
 		$this->errors=[];
@@ -136,6 +141,9 @@ class User extends DatabaseConn{
 
 	    return $this->errors;
 	}*/
+=======
+	 
+>>>>>>> 9f635f263d3af9c295fd79c5164da5a7f1aa3fc2
 	
 	/**
 	 * @return array
@@ -183,27 +191,15 @@ class User extends DatabaseConn{
 	 */
 	static public function find_email($email) {
     	$sql = "SELECT * FROM " . static::$tab_name ." WHERE email='" . self::$databaseName->escape_string($email) . "'";
-
     	$obj_arr = static::find_sql($sql);
-    	//print_r($obj_arr);
+
     	if(!empty($obj_arr)) {
     		return $obj_arr;
-      		//return array_shift($obj_arr);
+      		
     	} else {
       		return false;
     	}
-  	}/*
-  	static public function find_pass($pass) {
-    	$sql = "SELECT * FROM " . static::$tab_name ." WHERE password='" . self::$databaseName->escape_string($pass) . "'";
-
-    	$obj_arr = static::find_sql($sql);
-    	//print_r($obj_arr);
-    	if(!empty($obj_arr)) {
-      		return array_shift($obj_arr);
-    	} else {
-      		return false;
-    	}
-    }*/
+  	}
 }
 
 

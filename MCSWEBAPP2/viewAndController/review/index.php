@@ -35,8 +35,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
        $result=$review->save();
         if($result){
             //$new_id=$review->id;
-            $session->message('added review succesful');
-            //echo $review->messages;
+            
         }    //redirect_to(URL.'/login');
        
     }

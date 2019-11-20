@@ -1,6 +1,6 @@
 <?php
 	
-	ob_start();//output buffer must be used before any echo
+	
 	define("MODEL_PATH",dirname(__FILE__));
 	define("MCSPROJECT_PATH",dirname(MODEL_PATH));
 	define("VIEW_PATH",MCSPROJECT_PATH.'/viewandcontroller');

@@ -32,8 +32,6 @@ class Session{
 	 */
 	public function __construct(){
 		session_start();
-		if(!isset($_SESSION['pricing'])){
-			$_SESSION['pricing']=[];
 		}$this->checkLogin();
 	}
 
