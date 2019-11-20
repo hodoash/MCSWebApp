@@ -2,25 +2,36 @@
 	
 require_once('../model/settings.php');	
 
-
+$errors=[];
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 	$args=$_POST['user'];
     $user=new User($args);
+    $method = new ReflectionMethod('User', 'valUserForm');
+    $method->setAccessible(true);
+    $errors= $method->invoke(new User);
+    //User::valUserForm();
+    //print_r($errors);
+    //return true;
+
  //    $smth = User::find_email($args['email']);
  //    echo "smth";
 	// return true;
-	if(User::find_email($args['email'])){
-		$user->errors[]="a user already created an account with this email.";
+    if(empty($errors)){
+    	if(User::find_email($args['email'])){
+    		$user->errors[]="a user already created an account with this email.";
 
-	}else{
-		$result=$user->save();
-		if($result){
-			$new_id=$user->id;
-			$session->message('creation succesful');
-			redirect_to(URL.'/login');
-		}else{/*................*/}
-	}
+    	}else{
+    		$result=$user->save();
+    		if($result){
+    			$new_id=$user->id;
+    			$session->message('creation succesful');
+    			redirect_to(URL.'/login');
+    		}else{/*................*/}
+    	}
+    }else{//showAllErrors(); 
+        //redirect_to(URL.'/');
+    }
 }
 
 
@@ -57,6 +68,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     </head>
 
     <body>
+        <?php  echo showAllErrors($errors); ?>
         <nav class="navbar navbar-light navbar-expand-md">
             <div class="container-fluid"><a class="navbar-brand" href="#">CozyHill</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-2"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse justify-content-center align-items-stretch"
@@ -71,7 +83,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                     </ul>
                     <ul class="nav navbar-nav">
                         <li class="nav-item" role="presentation"><a class="nav-link active" href="login/index.php"><i class="fa fa-user"></i>login</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="about-us.php">About</a></li>
+                        <!--<li class="nav-item" role="presentation"><a class="nav-link" href="about-us.php">About</a></li>-->
                     </ul>
                 </div>
             </div>
@@ -80,7 +92,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             <section class="clean-block clean-hero" style="background-image:url(&quot;assets/img/undraw_best_place_r685.svg&quot;);color:rgba(55,149,207,0.85);background-position:center;background-size:cover;background-repeat:no-repeat;">
                 <div class="text">
                     <h2>We are CozyHills .</h2>
-                    <p>We bring you to the doorsteps of the hostels on the Berekusu Hill.  We enable you book hostels from the comfort of your home or anywhere you find yourself.</p><button class="btn btn-outline-light btn-lg" type="button">Learn More</button></div>
+                    <p>We bring you to the doorsteps of the hostels on the Berekusu Hill.  We enable you book hostels from the comfort of your home or anywhere you find yourself.</p></div>
             </section>
             <section class="clean-block about-us">
                 <div class="container">
@@ -155,12 +167,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                     <div class="block-heading">
                         <h2 class="text-info">Sign Up To Enjoy The Full Package</h2>
                     </div>
+                     <?php echo showAllErrors();  ?>
                     <form method="POST" action="">
-                        <div class="form-group"><label>Name</label><input name="user[name]" placeholder="Enter your name" value="<?php echo h($user->name);?>" class="form-control" type="text"></div>
-                        <div class="form-group"><label>Phone Number</label><input name="user[phone_no]" placeholder="Enter your phone_no" value="<?php echo sanitizeData($user->phone_no);?>" class="form-control" type="tel"></div>
-                        <div class="form-group"><label>Email</label><input name="user[email]" placeholder="Enter your email" value="<?php echo sanitizeData($user->email);?>" class="form-control" type="email"></div>
-                        <div class="form-group"><label>Password</label><input name="user[pass]" value="<?php echo sanitizeData($user->pass); ?>" class="form-control" placeholder="Enter your password" type="password"></div>
-                        <div class="form-group"><label>Confirm Password</label><input name="user[confirm_pass]" value="<?php echo sanitizeData($user->confirm_pass); ?>" class="form-control" type="password"></div>
+                        <div class="form-group"><label>Name</label><input name="user[name]" placeholder="Enter your name" class="form-control" type="text"></div>
+                        <div class="form-group"><label>Phone Number</label><input name="user[phone_no]" placeholder="Enter your phone_no" class="form-control" type="tel"></div>
+                        <div class="form-group"><label>Email</label><input name="user[email]" placeholder="Enter your email"  class="form-control" type="email"></div>
+                        <div class="form-group"><label>Password</label><input name="user[pass]" class="form-control"  type="password"></div>
+                        <div class="form-group"><label>Confirm Password</label><input name="user[confirm_pass]"  class="form-control" type="password"></div>
                         <div class="form-group"><button class="btn btn-primary btn-block"  placeholder="Enter your password" type="Submit">Sign Up!</button></div>
                     </form>
                 </div>

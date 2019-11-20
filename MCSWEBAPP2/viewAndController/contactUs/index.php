@@ -1,3 +1,23 @@
+<?php 
+
+require_once('../../model/settings.php');
+
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+    $ToEmail = 'managingcs@gmail.com'; 
+    $EmailSubject = 'MCS FEEDBACK FORM'; 
+    $mailheader = "From: ".$_POST["email"]."\r\n"; 
+    $mailheader .= "Reply-To: ".$_POST["email"]."\r\n"; 
+    $mailheader .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
+    $MESSAGE_BODY = "Name: ".$_POST["name"].""; 
+    $MESSAGE_BODY .= "Email: ".$_POST["email"].""; 
+    $MESSAGE_BODY .= "Comment: ".nl2br($_POST["comment"]).""; 
+    mail($ToEmail, $EmailSubject, $MESSAGE_BODY, $mailheader) or die ("Failure"); 
+    }
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -39,7 +59,7 @@
                 </ul>
                 <ul class="nav navbar-nav">
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="../login/index.php"><i class="fa fa-user"></i>login</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="about-us.html">About</a></li>
+                    <!-- <li class="nav-item" role="presentation"><a class="nav-link" href="about-us.html">About</a></li>-->
                 </ul>
             </div>
         </div>
@@ -51,12 +71,12 @@
                     <h2 class="text-info">Contact Us</h2>
                     <p>Questions , issues about the website and suggestions can be sent to us on this form. Send us a message and we would gladly reply you in an email as soon as we can.</p>
                 </div>
-                <form>
-                    <div class="form-group"><label>Name</label><input class="form-control" type="text"></div>
-                    <div class="form-group"><label>Subject</label><input class="form-control" type="text"></div>
-                    <div class="form-group"><label>Email</label><input class="form-control" type="text"></div>
-                    <div class="form-group"><label>Message</label><textarea class="form-control"></textarea></div>
-                    <div class="form-group"><button class="btn btn-primary btn-block" type="button">Send</button></div>
+                <form method="POST" action="">
+                    <div class="form-group"><label>Name</label><input name="name" class="form-control" type="text"></div>
+                    <!--<div class="form-group"><label>Subject</label><input class="form-control" type="text"></div>-->
+                    <div class="form-group"><label>Email</label><input class="form-control" name="email" type="email"></div>
+                    <div class="form-group"><label>Message</label><textarea name="comment" class="form-control"></textarea></div>
+                    <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Send</button></div>
                 </form>
             </div>
         </section>
@@ -88,11 +108,11 @@
             </div>
         </div>
     </footer>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
-    <script src="assets/js/smoothproducts.min.js"></script>
-    <script src="assets/js/theme.js"></script>
+    <script src="../assets/js/smoothproducts.min.js"></script>
+    <script src="../assets/js/theme.js"></script>
 </body>
 
 </html>

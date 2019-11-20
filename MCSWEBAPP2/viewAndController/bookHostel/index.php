@@ -98,7 +98,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 </ul>
                 <ul class="nav navbar-nav">
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="../login/index.php"><i class="fa fa-user"></i>login</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="about-us.html">About</a></li>
+                    <!-- <li class="nav-item" role="presentation"><a class="nav-link" href="about-us.html">About</a></li>-->
                 </ul>
             </div>
         </div>
@@ -129,9 +129,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                         <div class="form-check"><input name="book[roommate]" class="form-check-input" type="radio" id="formCheck-2"><label class="form-check-label" for="formCheck-2">No</label></div>
                     </div>
                     <div class="form-group"><label>Roommate's Email &amp; Number</label>
-                        <label>Roommate 1(Email, Phone Number)</label><input name="book[emailr1]" value="<?php echo h($user->emailr1);?>" placeholder="roommate's email" class="form-control" type="email"><br><input name="phone_nor1" value="<?php echo h($book->rm_phone_no);?>" placeholder="roommates phone number" class="form-control" type="tel"><br><label>Roommate 2(Email, Phone Number)</label><input name="book[emailr2]" value="<?php echo h($book->emailr2);?>" placeholder="roommate's email" class="form-control" type="email"><br>
-                        <input name="book[phone_no2]" value="<?php echo h($book->phone_no2);?>" placeholder="roommate's phone number" 
-                            class="form-control"  type="tel"><br>   <label>Roommate 3(Email, Phone Number)</label><input name="book[email3]" placeholder="roommate's email" class="form-control" type="email"><br><input name="book[phone_no3]" placeholder="roommate's number" value="<?php echo h($book->phone_no3);?>" class="form-control" type="tel"></div><button class="btn btn-primary" type="submit">Book Now!</button></form>
+                        <label>Roommate 1(Email, Phone Number)</label><input name="book[emailr1]" value="<?php echo sanitizeData($user->emailr1);?>" placeholder="roommate's email" class="form-control" type="email"><br><input name="phone_nor1" value="<?php echo sanitizeData($book->rm_phone_no);?>" placeholder="roommates phone number" class="form-control" type="tel"><br><label>Roommate 2(Email, Phone Number)</label><input name="book[emailr2]" value="<?php echo sanitizeData($book->emailr2);?>" placeholder="roommate's email" class="form-control" type="email"><br>
+                        <input name="book[phone_no2]" value="<?php echo sanitizeData($book->phone_no2);?>" placeholder="roommate's phone number" 
+                            class="form-control"  type="tel"><br>   <label>Roommate 3(Email, Phone Number)</label><input name="book[email3]" placeholder="roommate's email" class="form-control" value="<?php echo sanitizeData($book->email3);?>" type="email"><br><input name="book[phone_no3]" placeholder="roommate's number" value="<?php echo sanitizeData($book->phone_no3);?>" class="form-control" type="tel"></div><button class="btn btn-primary" type="submit">Book Now!</button></form>
                 <div class="block-heading">
                     <h2 class="text-info">Send Your Receipt</h2>
                     <p>Send your receipt now to confirm your reservation</p>
@@ -170,11 +170,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             </div>
         </div>
     </footer>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
-    <script src="assets/js/smoothproducts.min.js"></script>
-    <script src="assets/js/theme.js"></script>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script src="../assets/js/smoothproducts.min.js"></script>
+    <script src="../assets/js/theme.js"></script>
 </body>
 
 </html>

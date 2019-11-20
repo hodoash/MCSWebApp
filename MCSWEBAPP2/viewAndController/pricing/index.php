@@ -34,13 +34,13 @@
                     <li class="nav-item" role="presentation"><a class="nav-link" href="../index.php">Home</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="../gallery/index.php">&nbsp;Hostel Gallery</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="../pricing/index.php">Pricing</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="../bookHostel/index">Book a Hostel</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="../bookHostel/">Book a Hostel</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="../review/index.php">Review</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="../contactUs/index.php">Contact Us</a></li>
                 </ul>
                 <ul class="nav navbar-nav">
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="../login/index.php"><i class="fa fa-user"></i>login</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="about-us.html">About</a></li>
+                    <!-- <li class="nav-item" role="presentation"><a class="nav-link" href="about-us.html">About</a></li>-->
                 </ul>
             </div>
         </div>
@@ -123,11 +123,11 @@
             </div>
         </div>
     </footer>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
-    <script src="assets/js/smoothproducts.min.js"></script>
-    <script src="assets/js/theme.js"></script>
+    <script src="../assets/js/smoothproducts.min.js"></script>
+    <script src="../assets/js/theme.js"></script>
 </body>
 
 </html>

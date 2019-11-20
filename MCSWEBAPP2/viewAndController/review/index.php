@@ -79,11 +79,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                     <li class="nav-item" role="presentation"><a class="nav-link" href="../pricing/index.php">Pricing</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="../bookHostel/index.php">Book a Hostel</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="../review/index.php">Review</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="contactUs/index.php">Contact Us</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="../contactUs/">Contact Us</a></li>
                 </ul>
                 <ul class="nav navbar-nav">
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="../login/index.php"><i class="fa fa-user"></i>login</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="about-us.html">About</a></li>
+                   <!-- <li class="nav-item" role="presentation"><a class="nav-link" href="about-us.html">About</a></li>-->
                 </ul>
             </div>
         </div>
@@ -96,7 +96,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                     <p>Thoughts, problems or anything you especially loved about any of the hostels. Let us know, so we can improve to provide better services or help keep us on the right track.</p>
                 </div>
                 <form method="POST" action="">
-                    <div class="form-group"><label>Name</label><input class="form-control" name="name"  type="text"></div>
+                    <div class="form-group"><label>Name</label><input class="form-control" name="name" type="text"></div>
                     <div class="form-group"><label>Subject</label><input class="form-control" name="sub" type="text"></div>
                     <div class="form-group"><label>Message</label><textarea name="messages" class="form-control"></textarea></div>
                     <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Send</button></div>
@@ -131,11 +131,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             </div>
         </div>
     </footer>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
-    <script src="assets/js/smoothproducts.min.js"></script>
-    <script src="assets/js/theme.js"></script>
+    <script src="../assets/js/smoothproducts.min.js"></script>
+    <script src="../assets/js/theme.js"></script>
 </body>
 
 </html>
